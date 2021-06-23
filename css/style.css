@@ -1,0 +1,429 @@
+/* 
+ * Reset
+ * http://meyerweb.com/eric/tools/css/reset/ 
+ */
+
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed, 
+ figure, figcaption, footer, header, hgroup, 
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     font-size: 100%;
+     font: inherit;
+     vertical-align: baseline;
+ }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Estilos */
+
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5em;
+}
+
+.container {
+    max-width: 1080px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.header {
+    display: block;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media(max-width: 768px){
+    .menu{
+        justify-content: center;
+    }
+    #nav{
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+
+.menu-list {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu-list li {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#btn-mobile{
+    display: none;
+}
+
+@media(max-width: 768px){
+    
+    #btn-mobile{
+        display: block;
+        padding: .5rem 1rem;
+        margin-top: 5px;
+        margin-left: 1rem;
+        cursor: pointer;
+    }
+
+    #btn-mobile div{
+        width: 32px;
+        height: 2px;
+        background: #ffff;
+        margin: 8px;
+    }
+
+    .menu-list{
+        display: block;
+        border-radius: 33px;
+        background-color: rgba(56, 54, 54, 0.685);
+        padding: 2rem .8rem 1rem;
+        font-size: .9rem;
+        text-align: center;
+        transition: .4s linear;
+        visibility: hidden;
+        left: -1px;
+    }
+    .menu-list li{
+        border-bottom: rgb(116, 114, 114) solid .1rem;
+        padding: .8rem;
+    }
+    #nav.active .menu-list{
+        visibility: visible;
+        transform: translateX(1px);
+    }
+
+    #nav.active .line1{
+        transform: rotate(-45deg) translate(-8px, 8px);
+    }
+
+    #nav.active .line2{
+        opacity: 0;
+    }
+
+    #nav.active .line3{
+        transform: rotate(45deg) translate(-5px, -7px);
+    }
+}
+
+/* 
+ * Hero
+ */
+
+.hero{
+    background: url(../imagens-desktop/s1\ ft1.png) no-repeat center / cover;
+    color: white;
+    padding: 10rem 1.5rem 1.5rem;
+} 
+
+.hero-title{
+    font-size: 6rem;
+    font-weight: 800;
+    line-height: 140px;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 1172px;
+    padding-top: 80px;
+}
+
+.hero-content{
+    font: 1.5rem;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.button{
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background: #1cd4e9;
+    padding: 20px 20px;
+    border-radius: 42px;
+    margin-top: 80px;
+}
+
+@media(max-width: 768px){
+    .hero{
+        background-image: url(/imagens-mobile/s1\ mobile.png);
+    }
+    .hero-title, .hero-content p{
+        width: 100%;
+    }
+    .hero-title{
+        font-size: 3rem;
+        line-height: 1.5em;
+        padding-top: 1rem;
+    }
+    .hero-content p{
+        font-size: 0.9rem;;
+    }
+    .button{
+        font-size: 0.8rem;
+        padding: 10px 15px;
+    }
+}
+
+/* 
+ * Sobre
+ */
+
+.about{
+    padding: 6rem 1.5rem 0;
+}
+
+.about-title{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.about-box{
+    margin-top: 4rem;
+    box-shadow: 0px 0px 30px rgb(0, 0, 0); 
+    max-width: 850px;
+    background-color: white;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.about-box p + p{
+    padding-top: 1.5rem;
+}
+
+@media(max-width: 768px){
+    .about-box p{
+        font-size: 0.8rem;
+    }
+}
+
+@media(min-width: 769px){
+    .bg{
+        background-image: url(/imagens-desktop/bg2.png);  
+        background-size: 100% 100%;
+    }
+}
+
+/* 
+ * Serviços
+ */
+
+ .services{
+    padding: 6rem 1.5rem 0;
+ }
+
+ .services-title{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+ }
+ 
+ .services-container{
+    margin-top: 3rem;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+ }
+
+ .services-content h3{
+    font-size: 1.2rem;
+    color: #EFE60B;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 1.5rem;
+ }
+
+ .services-content{
+    border-radius: 33px;
+    padding: 1.5rem;
+    text-align: center;
+ }
+
+ .services-content p{
+    margin-top: .75rem;
+ }
+
+ @media(max-width: 960px){
+    .services-container{
+        grid-template-columns: 1fr;
+    }
+    .services-content p{
+        font-size: 0.8rem;
+    }
+}
+
+/* 
+ * Diferenciais
+ */
+
+.differential{
+    padding: 6rem 1.5rem;
+}
+
+ .differential-title{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+ }
+ 
+ .differential-container{
+    margin-top: 3rem;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8rem;
+ }
+
+ .differential-content{
+    border-radius: 51px;
+    padding: 6rem 2rem 3rem;
+    text-align: center;
+ }
+
+ .differential-content p{
+    margin-top: 5rem;
+    font-weight: bold;
+ }
+
+ @media(max-width: 960px){
+    .differential-container{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .differential-content p{
+        font-size: 0.8rem;
+    }
+}
+
+/* 
+ * Contato
+ */
+
+ .contact{
+    background-color: #171515;
+    border-top: #efe60b solid 3rem;
+    padding: 3rem 0;
+    color: white;
+ }
+ 
+ .contact-grid{
+    display: grid;
+    gap: 10rem;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem 1.5rem 0;
+ }
+
+ .contact-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ .contact-information{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    font-size: .8rem;
+ }
+
+ .contact-address{
+    font-size: .8rem;
+ }
+ 
+ .contact-about{
+    padding-top: 2rem;
+ }
+
+ .contact-about p + p{
+    padding-top: 1rem;
+ }
+
+ .form-box{
+    background-color: #929191;
+    display: block;
+ }
+
+ 
+ .form-box p{
+    padding: 1rem;
+ }
+ .form-box input{
+    width: 100%;
+    padding: 1rem .8rem;
+ }
+
+ .form-box p:nth-child(4) input{
+    padding: 3.5rem;
+ }
+
+ .form-box p:nth-child(5) input{
+    font-weight: bold;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    background: #1cd4e9;
+    border: none;
+ }
+
+ @media(max-width: 768px){
+    .contact-grid{
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 2rem;
+    }
+ }
