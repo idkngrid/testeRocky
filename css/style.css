@@ -407,7 +407,7 @@ body{
  }
 
  .form-box p:nth-child(4) input{
-    padding: 3.5rem;
+    padding: 1rem .8rem 3.5rem;
  }
 
  .form-box p:nth-child(5) input{
